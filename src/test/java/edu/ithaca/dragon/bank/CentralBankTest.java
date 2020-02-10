@@ -123,7 +123,7 @@ public class CentralBankTest {
         assertThrows(IllegalArgumentException.class, () -> account.transfer(accountAID, accountBID, 92.498865));
         assertThrows(IllegalArgumentException.class, () -> account.transfer(accountAID, accountBID, 9999999.999999)); //border case
     }
-    
+
     @Test
     void checkBalanceTest() throws AccountDoesNotExistException, AccountAlreadyExistsException {
 
