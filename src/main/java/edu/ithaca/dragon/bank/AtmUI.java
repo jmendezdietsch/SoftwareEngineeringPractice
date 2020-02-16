@@ -8,6 +8,7 @@ import java.util.*;
  * need to add ATM transactions to history through addHistory
  */
 public class AtmUI extends CentralBank{
+    boolean logout = false;
 
     private BasicAPI atm;
 
@@ -83,6 +84,7 @@ public class AtmUI extends CentralBank{
     //check and ask after user has finished a transaction and would like to log out
     public boolean logout(String choice) {
         if(choice.equals("Y")) {
+            logout = true;
             return true;
         }
         else if(!choice.equals("Y") && !choice.equals("N")){
@@ -111,8 +113,9 @@ public class AtmUI extends CentralBank{
          *
          *             //with use login
          *             System.out.println("Enter your account login Id");
-         *             if(ATMCredentials(account, password).equals(true)){
+         *             if(ATMCredentials(account, password).equals(true) && logout.equals(false){
          *                  System.out.println("What would you like to do(check balance, deposit, withdraw, transfer");
+         *
          *                  if(input.equals("check balance")){
          *                      ATMBalance(account);
          *                  }
@@ -156,11 +159,16 @@ public class AtmUI extends CentralBank{
          *                              }
          *                          }
          *                       }
+         *                       System.out.println("Would you like to logout: ");
+         *                       String logoutIn = " ";
+         *                       logout(logoutIn);
+         *                       }
          *                  }
-         *                  else{
          *
-         *
+         *              }
          *         }
+         *
+         *   }
         */
     }
 
