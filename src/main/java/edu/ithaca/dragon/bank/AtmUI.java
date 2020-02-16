@@ -113,27 +113,38 @@ public class AtmUI extends CentralBank{
          *
          *             //with use login
          *             System.out.println("Enter your account login Id");
+         *
+         *             //Check if account is correct as well as logout is false
          *             if(ATMCredentials(account, password).equals(true) && logout.equals(false){
          *                  System.out.println("What would you like to do(check balance, deposit, withdraw, transfer");
          *
+         *                  //if the input is check balance, will call the method and return check balance
          *                  if(input.equals("check balance")){
          *                      ATMBalance(account);
          *                  }
+         *                  //if the input is deposit, will call the deposit method with amount input
          *                  else if(input.equals("deposit")){
          *                      System.out.println("How much would you like to deposit: ");
          *                      amount = " ";
          *                      ATMDeposit(account, amount);
          *                  }
+         *                  //if the input is deposit, will call the deposit method with amount input
          *                  else if(input.equals("withdraw")){
          *                      System.out.println("How much would you like to withdraw: ");
          *                      amount = " ";
          *                      ATMWithdraw(account, amount);
          *                  }
+         *                  //if the input is transfer, will call the transfer method but needs to ask from what account
          *                  else if(input.equals("transfer")){
+         *                      //asks if the current account will gain the amount from another account or will send the amount to another account
          *                      System.out.println("Would you like to transfer from or to: ");
          *                      String transferChoice = " ";
          *                      boolean transfer = true;
+         *
+         *                      //uses a boolean value to make sure transfer will happen
          *                      while(transfer.equals(true)) {
+         *
+         *                          //will process amount from another account if choice is from
          *                          if(input.equals("from")) {
          *                              System.out.println("What account would you like to withraw: ");
          *                              transferAct = " ";
@@ -143,6 +154,7 @@ public class AtmUI extends CentralBank{
          *                              ATMTransfer(transferAct, account, amount);
          *                              transfer = false;
          *                          }
+         *                          //will process amount to another account if choice is to
          *                          else if(input.equals("to")) {
          *                              System.out.println("What account would you like to withraw: ");
          *                              transferAct = " ";
@@ -152,16 +164,21 @@ public class AtmUI extends CentralBank{
          *                              ATMTransfer(transferAct, account, amount);
          *                              transfer = false;
          *                          }
+         *                          //will go through a while loop if the original value was not to or from and ill continue until choice is said
          *                          else{
          *                              while(!input.equals("to") && !input.equals("from")) {
          *                                  System.out.println("Wrong input. Would you like to transfer from or to: ");
-         *                                  String transferChoice = " ";
+         *                                  transferChoice = " ";
          *                              }
          *                          }
          *                       }
-         *                       System.out.println("Would you like to logout: ");
-         *                       String logoutIn = " ";
-         *                       logout(logoutIn);
+         *
+         *                       //Ask if customer would like to logout or do another transaction (is in while loop so will continue anyway)
+         *                       System.out.println("Would you like to logout or do another transaction: ");
+         *                       String nextAction = " ";
+         *                       if(nextAction.equals("logout") {
+         *                          String logoutIn = " ";
+         *                          logout(logoutIn);
          *                       }
          *                  }
          *
